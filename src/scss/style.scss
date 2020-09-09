@@ -1,0 +1,131 @@
+@import "variables";
+@import "mixin";
+
+
+nav{
+    background: $turquoise;
+    height: fit-content;
+    .container{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    span{
+        font-family: cursive;
+        color: $grey;
+        padding: 10px;
+        font-size: 2rem;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    a{
+        color: $grey;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 16px;
+        display: block;
+        text-align: center;
+        &:hover{
+          border-bottom: 3px solid $orange;
+          transition: all .3s ease-in;
+        }
+    }
+    @include clearFix
+}
+h1{
+    color: $orange;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 3rem; 
+}
+
+.entries{
+    border:2px solid $turquoise;
+    background: $turquoiseLight;
+    h3{
+        @extend h1;
+        padding-top: 0px;
+        font-size: 1rem;
+    }
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    form{
+        width: 60%;
+        background: $grey;
+        padding: 18px;
+        .input-field{
+            padding: 0 8px;
+            position: relative;
+            .prefix {
+                // position: absolute;
+                width: 3rem;
+                font-size: 1.5rem;
+                color: darken($turquoise, 20%);
+                transition: color .2s;
+                top: .5rem;
+                display: inline-block
+            }
+        }
+        label{
+            color: $orange;
+            top: 0;
+            left: 0;
+            font-size: 16px;
+            // position: absolute;
+            cursor: text;
+        }
+        input{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid grey;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            margin: 18px 0 12px 0;
+            &:focus{
+                border-bottom: 1px solid darken($orange, 20%);
+                transition: all .5s ease-out;
+            }
+        }
+        textarea{
+            @extend input;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            button{
+                width: 70%;
+                outline: none;
+                border: none;
+                border-radius: 20px;
+                color : rgb(59, 59, 59);
+                background: $orange;
+                height: 3rem;
+                font-size: 1.2rem;
+                &:hover{
+                    background: lighten($orange, 4);
+                    transition: all .3s ease-out;
+                }
+            }
+       
+        }
+        
+    }
+    
+}
+
+  
+.error {
+    color: red;
+    font-size: 10px;
+  }
+  
